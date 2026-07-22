@@ -1,0 +1,164 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+}
+
+main{
+    width:100%;
+}
+
+nav{
+    width:100%;
+    height:80px;
+    background:#fff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 8%;
+}
+
+.nav-logo{
+    width:20%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.nav-logo img{
+    width:100px;
+}
+
+.nav-link{
+    width:50%;
+    height:100%;
+    display:flex;
+    justify-content:space-evenly;
+    align-items:center;
+}
+
+.nav-link a{
+    text-decoration:none;
+    color:#333;
+    font-size:16px;
+    font-weight:500;
+}
+
+.nav-link a:hover{
+    color:#ff4d4d;
+}
+
+.nav-btn{
+    width:20%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.nav-btn button{
+    padding:12px 30px;
+    border:none;
+    background:#ff4d4d;
+    color:white;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:15px;
+}
+
+.nav-btn button:hover{
+    background:#e63939;
+}
+
+.part1{
+    width:100%;
+    height:90vh;
+    background:#111;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 8%;
+}
+
+.p1-info{
+    width:45%;
+    color:white;
+}
+
+.p1-info h1{
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+.p1-info p{
+    font-size:18px;
+    margin-bottom:20px;
+    color:#ddd;
+}
+
+.rating{
+    color:gold;
+    font-size:22px;
+    margin-bottom:25px;
+}
+
+.p1-info button{
+    padding:15px 35px;
+    border:none;
+    background:#ff4d4d;
+    color:white;
+    border-radius:30px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.p1-info button:hover{
+    background:#e63939;
+}
+
+.p1-image{
+    width:50%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.p1-image img{
+    width:450px;
+    height:450px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.part2{
+    width:100%;
+    height:90vh;
+    background:#df9f0a;
+}
+.part3{
+    width:100%;
+    height:90vh;
+    background:#5a0c6d;
+}
+.part4{
+    width:100%;
+    height:90vh;
+    background:#5f1818;
+}
+.part5{
+    width:100%;
+    height:90vh;
+    background:#a02f44;
+}
+.footer{
+    width:100%;
+    height:90vh;
+    background:brown
+}
