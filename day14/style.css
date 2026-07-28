@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+main{
+    width: 100%;
+    height: 100vh;
+    background-color: aqua;
+    display: grid;
+
+    grid-template-rows:90px 1fr 1fr 1fr 100px; 
+    grid-template-columns:300px 1fr 200px ; 
+
+    grid-template-areas:
+    "van van van"
+    "edisa trap1 trap1"
+    "edisa trap2 trap2"
+    "edisa trap3 trap3" 
+    "rotoof rotoof rotoof" ;
+}
+nav{
+
+    grid-area: van;
+    background-color: #9a9494;
+}
+aside{
+
+    grid-area: edisa;
+    background-color: aquamarine;
+
+}
+.part1{
+    grid-area: trap1 ;
+    background-color: bisque;
+
+}
+.part2{
+    grid-area: trap2 ;
+    background-color: blue;
+
+}
+.part3{
+    grid-area: trap3 ;
+    background-color: red;
+}
+footer{
+    grid-area: rotoof;
+    background-color: rgb(29, 210, 56);
+}
