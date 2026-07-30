@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Bootstrap Practice</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<main class="container-fluid">
+    <nav class="row bg-dark" style="height:90px;">
+        <div class="col-3 d-flex justify-content-center align-items-center">
+
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" height="45" width="130" alt="Amazon">
+
+        </div>
+        <div class="col-7 nav nav-underline justify-content-center align-items-center">
+
+            <section class="nav-item">
+                <a href="#" class="nav-link text-white">Today's Deals</a>
+            </section>
+
+            <section class="nav-item">
+                <a href="#" class="nav-link text-white">Customer Service</a>
+            </section>
+
+            <section class="nav-item">
+                <a href="#" class="nav-link text-white">Registry</a>
+            </section>
+
+            <section class="nav-item">
+                <a href="#" class="nav-link text-white">Gift Cards</a>
+            </section>
+
+            <section class="nav-item">
+                <a href="#" class="nav-link text-white">Sell</a>
+            </section>
+
+            <section class="dropdown">
+
+                <a href="#"
+                    class="nav-link dropdown-toggle text-white"
+                    data-bs-toggle="dropdown">
+
+                    Account
+
+                </a>
+
+                <ul class="dropdown-menu">
+
+                    <li>
+                        <a href="#" class="dropdown-item">Your Account</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="dropdown-item">Orders</a>
+                    </li>
+
+                    <li><hr class="dropdown-divider"></li>
+
+                    <li>
+                        <a href="#" class="dropdown-item">Prime</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="dropdown-item">Wishlist</a>
+                    </li>
+
+                    <li><hr class="dropdown-divider"></li>
+
+                    <li>
+                        <a href="#" class="dropdown-item">Sign Out</a>
+                    </li>
+
+                </ul>
+
+            </section>
+
+        </div>
+        <div class="col-2 d-flex justify-content-center align-items-center gap-2">
+
+            <button class="btn btn-warning">
+                Sign In
+            </button>
+
+            <button class="btn btn-outline-light">
+                Cart
+            </button>
+
+        </div>
+
+    </nav>
+    <article class="row justify-content-center align-items-center bg-light"
+        style="height:180px;">
+
+        <div class="col-10 text-center">
+
+            <button class="btn btn-primary">Primary</button>
+            <button class="btn btn-secondary">Secondary</button>
+            <button class="btn btn-success">Success</button>
+            <button class="btn btn-danger">Danger</button>
+            <button class="btn btn-warning">Warning</button>
+            <button class="btn btn-info">Info</button>
+            <button class="btn btn-dark">Dark</button>
+
+            <hr>
+
+            <button class="btn btn-outline-primary">Primary</button>
+            <button class="btn btn-outline-secondary">Secondary</button>
+            <button class="btn btn-outline-success">Success</button>
+            <button class="btn btn-outline-danger">Danger</button>
+            <button class="btn btn-outline-warning">Warning</button>
+            <button class="btn btn-outline-info">Info</button>
+            <button class="btn btn-outline-dark">Dark</button>
+
+            <hr>
+
+            <button class="btn btn-primary" disabled>
+                Disabled Button
+            </button>
+
+        </div>
+
+    </article>
+    <article class="row justify-content-evenly align-items-center bg-secondary"
+        style="min-height:80vh;">
+
+        <div class="card" style="width:300px;">
+
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300"
+                class="card-img-top"
+                height="220">
+
+            <div class="card-body">
+
+                <h4 class="card-title">
+                    Shoes
+                </h4>
+
+                <p class="card-text">
+                    Premium running shoes with amazing comfort.
+                </p>
+
+                <button class="btn btn-outline-danger">
+                    Buy Now
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="card" style="width:300px;">
+
+            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=300"
+                class="card-img-top"
+                height="220">
+
+            <div class="card-body">
+
+                <h4 class="card-title">
+                    Smartphone
+                </h4>
+
+                <p class="card-text">
+                    Latest smartphone with high performance.
+                </p>
+
+                <button class="btn btn-primary">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="card" style="width:300px;">
+
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300" class="card-img-top" height="220">
+
+            <div class="card-body">
+
+                <h4 class="card-title">
+                    Smart Watch
+                </h4>
+
+                <p class="card-text">
+                    Stylish smartwatch with fitness tracking.
+                </p>
+
+                <button class="btn btn-success">
+                    Explore
+                </button>
+
+            </div>
+
+        </div>
+
+    </article>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+
