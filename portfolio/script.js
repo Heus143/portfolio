@@ -1,7 +1,3 @@
-/* ==========================================
-        LOADER
-========================================== */
-
 window.addEventListener("load", () => {
 
     const loader = document.getElementById("loader");
@@ -14,11 +10,6 @@ window.addEventListener("load", () => {
 
 });
 
-
-/* ==========================================
-        AOS ANIMATION
-========================================== */
-
 AOS.init({
 
     duration:1000,
@@ -28,11 +19,6 @@ AOS.init({
     easing:"ease-in-out"
 
 });
-
-
-/* ==========================================
-        TYPING EFFECT
-========================================== */
 
 new Typed(".typing",{
 
@@ -57,10 +43,6 @@ new Typed(".typing",{
 });
 
 
-/* ==========================================
-        SCROLL PROGRESS BAR
-========================================== */
-
 window.addEventListener("scroll",()=>{
 
     let scrollTop=document.documentElement.scrollTop;
@@ -72,11 +54,6 @@ window.addEventListener("scroll",()=>{
     document.getElementById("progressBar").style.width=progress+"%";
 
 });
-
-
-/* ==========================================
-        SCROLL TO TOP
-========================================== */
 
 const topBtn=document.getElementById("topBtn");
 
@@ -107,11 +84,6 @@ topBtn.addEventListener("click",()=>{
     });
 
 });
-
-
-/* ==========================================
-        NAVBAR ACTIVE LINK
-========================================== */
 
 const sections=document.querySelectorAll("section");
 
@@ -148,11 +120,6 @@ window.addEventListener("scroll",()=>{
     });
 
 });
-
-
-/* ==========================================
-        COUNTER ANIMATION
-========================================== */
 
 const counters=document.querySelectorAll(".counter");
 
@@ -216,11 +183,6 @@ observer.observe(counterSection);
 
 }
 
-
-/* ==========================================
-        CARD HOVER EFFECT
-========================================== */
-
 const cards=document.querySelectorAll(".card");
 
 cards.forEach(card=>{
@@ -239,11 +201,6 @@ cards.forEach(card=>{
 
 });
 
-
-/* ==========================================
-        DARK MODE
-========================================== */
-
 const darkBtn=document.getElementById("darkMode");
 
 if(darkBtn){
@@ -255,11 +212,6 @@ darkBtn.addEventListener("click",()=>{
 });
 
 }
-
-
-/* ==========================================
-        SMOOTH SCROLL
-========================================== */
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
 
@@ -277,11 +229,6 @@ behavior:"smooth"
 
 });
 
-
-/* ==========================================
-        CONTACT FORM
-========================================== */
-
 const form=document.querySelector("form");
 
 if(form){
@@ -297,11 +244,6 @@ form.reset();
 });
 
 }
-
-
-/* ==========================================
-        CURRENT YEAR
-========================================== */
 
 const year=document.getElementById("year");
 
