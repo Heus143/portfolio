@@ -1,256 +1,217 @@
 window.addEventListener("load", () => {
-
     const loader = document.getElementById("loader");
 
-    setTimeout(() => {
-
-        loader.classList.add("fade-out");
-
+    if (loader) {
+        setTimeout(() => {
+            loader.classList.add("fade-out");
     }, 1200);
-
-});
-
-AOS.init({
-
-    duration:1000,
-
-    once:true,
-
-    easing:"ease-in-out"
-
-});
-
-new Typed(".typing",{
-
-    strings:[
-
-        "Python Full Stack Developer",
-
-        "Generative AI Enthusiast",
-
-        "Machine Learning Enthusiast",
-
-        "Open To Work"
-
-    ],
-
-    typeSpeed:70,
-
-    backSpeed:40,
-
-    loop:true
-
-});
-
-
-window.addEventListener("scroll",()=>{
-
-    let scrollTop=document.documentElement.scrollTop;
-
-    let scrollHeight=document.documentElement.scrollHeight-document.documentElement.clientHeight;
-
-    let progress=(scrollTop/scrollHeight)*100;
-
-    document.getElementById("progressBar").style.width=progress+"%";
-
-});
-
-const topBtn=document.getElementById("topBtn");
-
-window.addEventListener("scroll",()=>{
-
-    if(window.scrollY>300){
-
-        topBtn.style.display="block";
-
     }
-
-    else{
-
-        topBtn.style.display="none";
-
-    }
-
 });
 
-topBtn.addEventListener("click",()=>{
 
-    window.scrollTo({
+if (typeof AOS !== "undefined") {
+    AOS.init({
+        duration: 1000,
+        once: true,
+        easing: "ease-in-out"
+    });
+}
 
-        top:0,
 
-        behavior:"smooth"
+const typingElement = document.querySelector(".typing");
+
+if (typingElement && typeof Typed !== "undefined") {
+    new Typed(".typing", {
+        strings: [
+            "Python Full Stack Developer",
+            "Full Stack Developer",
+            "Generative AI Enthusiast",
+            "Machine Learning Enthusiast",
+            "Frontend Developer",
+            "Backend Developer",
+            
+        ],
+        typeSpeed: 70,
+        backSpeed: 40,
+        backDelay: 1200,
+        startDelay: 500,
+        loop: true,
 
     });
+}
 
+
+window.addEventListener("scroll", () => {
+    const scrollTop = window.scrollY;
+
+    const scrollHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+
+    const progressBar = document.getElementById("progressBar");
+
+    if (progressBar) {
+        const progress =
+            scrollHeight > 0
+                ? (scrollTop / scrollHeight) * 100
+                : 0;
+
+        progressBar.style.width = progress + "%";
+    }
 });
 
-const sections=document.querySelectorAll("section");
 
-const navLinks=document.querySelectorAll(".nav-link");
+const topBtn = document.getElementById("topBtn");
 
-window.addEventListener("scroll",()=>{
-
-    let current="";
-
-    sections.forEach(section=>{
-
-        const sectionTop=section.offsetTop-120;
-
-        const sectionHeight=section.clientHeight;
-
-        if(pageYOffset>=sectionTop){
-
-            current=section.getAttribute("id");
-
+if (topBtn) {
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+            topBtn.style.display = "flex";
+        } else {
+            topBtn.style.display = "none";
         }
-
     });
 
-    navLinks.forEach(link=>{
+    topBtn.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+}
 
+
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll(".nav-link");
+
+function updateActiveNav() {
+    let current = "";
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 150;
+
+        if (window.scrollY >= sectionTop) {
+            current = section.getAttribute("id");
+        }
+    });
+
+    navLinks.forEach(link => {
         link.classList.remove("active");
 
-        if(link.getAttribute("href")==="#"+current){
-
+        if (link.getAttribute("href") === "#" + current) {
             link.classList.add("active");
+        }
+    });
+}
 
+window.addEventListener("scroll", updateActiveNav);
+
+updateActiveNav();
+
+
+const counters = document.querySelectorAll(".counter");
+const counterSection = document.querySelector(".stats-section");
+
+if (counterSection && counters.length > 0) {
+    let counterStarted = false;
+
+    function startCounter() {
+        if (counterStarted) {
+            return;
         }
 
-    });
+        counterStarted = true;
 
-});
+        counters.forEach(counter => {
+            const target = Number(
+                counter.getAttribute("data-target")
+            );
 
-const counters=document.querySelectorAll(".counter");
+            let count = 0;
 
-const speed=150;
+            function updateCounter() {
+                const increment = Math.max(
+                    1,
+                    Math.ceil(target / 80)
+                );
 
-const startCounter=()=>{
+                if (count < target) {
+                    count += increment;
 
-    counters.forEach(counter=>{
+                    if (count > target) {
+                        count = target;
+                    }
 
-        const update=()=>{
+                    counter.textContent = count;
 
-            const target=+counter.getAttribute("data-target");
-
-            const count=+counter.innerText;
-
-            const increment=target/speed;
-
-            if(count<target){
-
-                counter.innerText=Math.ceil(count+increment);
-
-                setTimeout(update,15);
-
+                    setTimeout(updateCounter, 20);
+                } else {
+                    counter.textContent = target;
+                }
             }
 
-            else{
+            updateCounter();
+        });
+    }
 
-                counter.innerText=target;
+    const observer = new IntersectionObserver(
+        entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    startCounter();
+                    observer.disconnect();
+                }
+            });
+        },
+        {
+            threshold: 0.3
+        }
+    );
 
-            }
+    observer.observe(counterSection);
+}
 
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function(e) {
+        const href = this.getAttribute("href");
+
+        if (!href || href === "#") {
+            return;
         }
 
-        update();
+        const target = document.querySelector(href);
 
-    });
+        if (target) {
+            e.preventDefault();
 
-};
-
-const counterSection=document.querySelector(".stats");
-
-if(counterSection){
-
-const observer=new IntersectionObserver(entries=>{
-
-    entries.forEach(entry=>{
-
-        if(entry.isIntersecting){
-
-            startCounter();
-
-            observer.disconnect();
-
+            target.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
         }
-
     });
-
 });
 
-observer.observe(counterSection);
 
-}
+const form = document.getElementById("contactForm");
 
-const cards=document.querySelectorAll(".card");
+if (form) {
+    form.addEventListener("submit", e => {
+        e.preventDefault();
 
-cards.forEach(card=>{
+        alert("Thank you! Your message has been received.");
 
-    card.addEventListener("mouseenter",()=>{
-
-        card.style.transform="translateY(-12px)";
-
+        form.reset();
     });
-
-    card.addEventListener("mouseleave",()=>{
-
-        card.style.transform="translateY(0px)";
-
-    });
-
-});
-
-const darkBtn=document.getElementById("darkMode");
-
-if(darkBtn){
-
-darkBtn.addEventListener("click",()=>{
-
-    document.body.classList.toggle("dark");
-
-});
-
 }
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
 
-anchor.addEventListener("click",function(e){
+const year = document.getElementById("year");
 
-e.preventDefault();
-
-document.querySelector(this.getAttribute("href")).scrollIntoView({
-
-behavior:"smooth"
-
-});
-
-});
-
-});
-
-const form=document.querySelector("form");
-
-if(form){
-
-form.addEventListener("submit",(e)=>{
-
-e.preventDefault();
-
-alert("Thank you! Your message has been received.");
-
-form.reset();
-
-});
-
+if (year) {
+    year.textContent = new Date().getFullYear();
 }
 
-const year=document.getElementById("year");
-
-if(year){
-
-year.innerHTML=new Date().getFullYear();
-
-}
 
 console.log("Portfolio Loaded Successfully 🚀");
