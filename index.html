@@ -27,6 +27,9 @@
 
 <body>
 
+    <!-- AI / CODING BACKGROUND LAYER -->
+    <div id="particles-js" aria-hidden="true"></div>
+
     <div id="loader">
         <div class="spinner-border text-primary" style="width:60px;height:60px;"></div>
     </div>
@@ -104,7 +107,7 @@
 
     <!-- HOME -->
 
-    <section id="home" class="hero">
+    <section id="home" class="hero ai-coding-hero">
 
         <div class="hero-shape hero-shape-one"></div>
         <div class="hero-shape hero-shape-two"></div>
@@ -196,9 +199,22 @@
 
                 <div class="col-lg-6" data-aos="zoom-in">
 
-                    <div class="hero-image-wrapper">
+                    <div class="hero-image-wrapper hero-visual-stage">
 
                         <div class="hero-circle"></div>
+
+                        <!-- Decorative coding interface; original profile image remains unchanged -->
+                        <div class="hero-code-panel" aria-hidden="true">
+                            <div class="hero-code-panel-top">
+                                <span></span><span></span><span></span>
+                                <i class="bi bi-code-slash"></i>
+                            </div>
+                            <div class="hero-code-panel-body">
+                                <i class="bi bi-braces"></i>
+                                <i class="bi bi-cpu"></i>
+                                <i class="bi bi-terminal"></i>
+                            </div>
+                        </div>
 
                         <img src="profile.jpg.png"
                             class="profile-image"
@@ -747,8 +763,6 @@
         </div>
 
     </section>
-
-
     <!-- CORE COMPETENCIES -->
 
     <section class="section-padding">
@@ -838,59 +852,60 @@
     </section>
 
 
- <!-- STATS -->
+    <!-- STATS -->
 
-<section class="stats-section">
+    <section class="stats-section">
 
-    <div class="container">
+        <div class="container">
 
-        <div class="row g-4 text-center">
+            <div class="row g-4 text-center">
 
-            <!-- PROJECTS -->
+                <!-- PROJECTS -->
 
-            <div class="col-md-3 col-6">
-                <div class="stat-item">
-                    <i class="bi bi-code-square"></i>
-                    <h2 class="counter" id="projectCount">0</h2>
-                    <p>Major Projects</p>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <i class="bi bi-code-square"></i>
+                        <h2 class="counter" id="projectCount">0</h2>
+                        <p>Major Projects</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- TECHNICAL SKILLS -->
+                <!-- TECHNICAL SKILLS -->
 
-            <div class="col-md-3 col-6">
-                <div class="stat-item">
-                    <i class="bi bi-stack"></i>
-                    <h2 class="counter" data-target="15">0</h2>
-                    <p>Technical Skills</p>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <i class="bi bi-stack"></i>
+                        <h2 class="counter" data-target="15">0</h2>
+                        <p>Technical Skills</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- CERTIFICATES -->
+                <!-- CERTIFICATES -->
 
-            <div class="col-md-3 col-6">
-                <div class="stat-item">
-                    <i class="bi bi-award"></i>
-                    <h2 class="counter" data-target="3">0</h2>
-                    <p>Certificates</p>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <i class="bi bi-award"></i>
+                        <h2 class="counter" data-target="3">0</h2>
+                        <p>Certificates</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- INTERNSHIP -->
+                <!-- INTERNSHIP -->
 
-            <div class="col-md-3 col-6">
-                <div class="stat-item">
-                    <i class="bi bi-briefcase"></i>
-                    <h2 class="counter" data-target="1">0</h2>
-                    <p>Internship</p>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <i class="bi bi-briefcase"></i>
+                        <h2 class="counter" data-target="1">0</h2>
+                        <p>Internship</p>
+                    </div>
                 </div>
+
             </div>
 
         </div>
 
-    </div>
+    </section>
 
-</section>
 
     <!-- CERTIFICATIONS -->
 
@@ -1202,245 +1217,241 @@
         </div>
 
     </section>
+    <!-- PROJECTS -->
+
+    <section id="projects" class="section-padding projects-section">
+
+        <div class="container">
+
+            <div class="section-heading light-heading" data-aos="fade-up">
+
+                <span>MY WORK</span>
+
+                <h2>Featured Projects</h2>
+
+                <div class="heading-line"></div>
+
+                <p>
+                    Projects developed using modern technologies
+                </p>
+
+            </div>
+
+            <div class="row g-4">
+
+                <!-- PROJECT 1 -->
+
+                <div class="col-lg-6" data-aos="fade-right">
+
+                    <div class="project-card">
+
+                        <div class="project-image">
+                            <img src="assessment-platform.png"
+                                 alt="AI Integrated Online Assessment Platform">
+                        </div>
+
+                        <div class="project-content">
+
+                            <div class="project-tags">
+                                <span>React.js</span>
+                                <span>Node.js</span>
+                                <span>Express.js</span>
+                                <span>MongoDB</span>
+                                <span>Generative AI</span>
+                            </div>
+
+                            <h3>AI Integrated Online Assessment Platform</h3>
+
+                            <p>
+                                An AI-powered online assessment platform
+                                designed for conducting online examinations.
+                                The application provides separate dashboards
+                                for teachers and students with secure
+                                authentication and assessment management.
+                            </p>
+
+                            <h5>Key Features</h5>
+
+                            <ul>
+                                <li>JWT Authentication</li>
+                                <li>Teacher Dashboard</li>
+                                <li>Student Dashboard</li>
+                                <li>AI Question Generation</li>
+                                <li>Online Assessments</li>
+                                <li>MongoDB Atlas Integration</li>
+                            </ul>
+
+                            <div class="project-buttons">
+
+                                <a href="https://github.com/Heus143/curious-exam-hub.git"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   class="project-btn dark-btn">
+                                    <i class="bi bi-github"></i>
+                                    GitHub
+                                </a>
+
+                                <a href="https://curious-exam-hub.vercel.app/"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   class="project-btn blue-btn">
+                                    <i class="bi bi-box-arrow-up-right"></i>
+                                    Live Demo
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
 
 
-    
-<!-- PROJECTS -->
+                <!-- PROJECT 2 -->
 
-<section id="projects" class="section-padding projects-section">
+                <div class="col-lg-6" data-aos="fade-left">
 
-    <div class="container">
+                    <div class="project-card">
 
-        <div class="section-heading light-heading" data-aos="fade-up">
+                        <div class="project-image">
+                            <img src="employee-dashboard.png"
+                                 alt="Employee Management System">
+                        </div>
 
-            <span>MY WORK</span>
+                        <div class="project-content">
 
-            <h2>Featured Projects</h2>
+                            <div class="project-tags">
+                                <span>Python</span>
+                                <span>Flask</span>
+                                <span>MongoDB</span>
+                                <span>HTML</span>
+                                <span>Bootstrap</span>
+                            </div>
 
-            <div class="heading-line"></div>
+                            <h3>Employee Management System</h3>
 
-            <p>
-                Projects developed using modern technologies
-            </p>
+                            <p>
+                                A secure web-based employee management
+                                application developed using Python and Flask.
+                                The system helps manage employee records
+                                with authentication, CRUD operations,
+                                dashboard and report generation features.
+                            </p>
+
+                            <h5>Key Features</h5>
+
+                            <ul>
+                                <li>Secure Login Authentication</li>
+                                <li>Employee CRUD Operations</li>
+                                <li>Employee Dashboard</li>
+                                <li>Excel Export</li>
+                                <li>PDF Report Generation</li>
+                                <li>MongoDB Atlas Integration</li>
+                            </ul>
+
+                            <div class="project-buttons">
+
+                                <a href="https://github.com/Heus143/system"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   class="project-btn dark-btn">
+                                    <i class="bi bi-github"></i>
+                                    GitHub
+                                </a>
+
+                                <a href="https://system-1-dinp.onrender.com/"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   class="project-btn green-btn">
+                                    <i class="bi bi-box-arrow-up-right"></i>
+                                    Live Demo
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PROJECT 3 -->
+
+                <div class="col-lg-6" data-aos="fade-up">
+
+                    <div class="project-card">
+
+                        <div class="project-image">
+                            <img src="gamezone.png"
+                                 alt="GameZone Gaming Products Marketplace">
+                        </div>
+
+                        <div class="project-content">
+
+                            <div class="project-tags">
+                                <span>React.js</span>
+                                <span>JavaScript</span>
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>Redux Toolkit</span>
+                            </div>
+
+                            <h3>GameZone – Gaming Products Marketplace</h3>
+
+                            <p>
+                                A responsive gaming e-commerce platform
+                                developed using React.js. It allows users
+                                to explore gaming products, manage shopping
+                                carts, maintain wishlists, and handle orders
+                                through an interactive interface.
+                            </p>
+
+                            <h5>Key Features</h5>
+
+                            <ul>
+                                <li>User Registration and Login</li>
+                                <li>Product Browsing and Search</li>
+                                <li>Category-Based Filtering</li>
+                                <li>Product Details</li>
+                                <li>Shopping Cart Management</li>
+                                <li>Wishlist Management</li>
+                                <li>Protected Checkout</li>
+                                <li>Order History and Tracking</li>
+                            </ul>
+
+                            <div class="project-buttons">
+
+                                <a href="https://github.com/Heus143/game-zone.git"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   class="project-btn dark-btn">
+                                    <i class="bi bi-github"></i>
+                                    GitHub
+                                </a>
+
+                                <a href="https://gamezonestore.onrender.com/"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   class="project-btn blue-btn">
+                                    <i class="bi bi-box-arrow-up-right"></i>
+                                    Live Demo
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 
-        <div class="row g-4">
-
-            <!-- PROJECT 1 -->
-
-            <div class="col-lg-6" data-aos="fade-right">
-
-                <div class="project-card">
-
-                    <div class="project-image">
-                        <img src="assessment-platform.png"
-                             alt="AI Integrated Online Assessment Platform">
-                    </div>
-
-                    <div class="project-content">
-
-                        <div class="project-tags">
-                            <span>React.js</span>
-                            <span>Node.js</span>
-                            <span>Express.js</span>
-                            <span>MongoDB</span>
-                            <span>Generative AI</span>
-                        </div>
-
-                        <h3>AI Integrated Online Assessment Platform</h3>
-
-                        <p>
-                            An AI-powered online assessment platform
-                            designed for conducting online examinations.
-                            The application provides separate dashboards
-                            for teachers and students with secure
-                            authentication and assessment management.
-                        </p>
-
-                        <h5>Key Features</h5>
-
-                        <ul>
-                            <li>JWT Authentication</li>
-                            <li>Teacher Dashboard</li>
-                            <li>Student Dashboard</li>
-                            <li>AI Question Generation</li>
-                            <li>Online Assessments</li>
-                            <li>MongoDB Atlas Integration</li>
-                        </ul>
-
-                        <div class="project-buttons">
-
-                            <a href="https://github.com/Heus143/curious-exam-hub.git"
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               class="project-btn dark-btn">
-                                <i class="bi bi-github"></i>
-                                GitHub
-                            </a>
-
-                            <a href="https://curious-exam-hub.vercel.app/"
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               class="project-btn blue-btn">
-                                <i class="bi bi-box-arrow-up-right"></i>
-                                Live Demo
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- PROJECT 2 -->
-
-            <div class="col-lg-6" data-aos="fade-left">
-
-                <div class="project-card">
-
-                    <div class="project-image">
-                        <img src="employee-dashboard.png"
-                             alt="Employee Management System">
-                    </div>
-
-                    <div class="project-content">
-
-                        <div class="project-tags">
-                            <span>Python</span>
-                            <span>Flask</span>
-                            <span>MongoDB</span>
-                            <span>HTML</span>
-                            <span>Bootstrap</span>
-                        </div>
-
-                        <h3>Employee Management System</h3>
-
-                        <p>
-                            A secure web-based employee management
-                            application developed using Python and Flask.
-                            The system helps manage employee records
-                            with authentication, CRUD operations,
-                            dashboard and report generation features.
-                        </p>
-
-                        <h5>Key Features</h5>
-
-                        <ul>
-                            <li>Secure Login Authentication</li>
-                            <li>Employee CRUD Operations</li>
-                            <li>Employee Dashboard</li>
-                            <li>Excel Export</li>
-                            <li>PDF Report Generation</li>
-                            <li>MongoDB Atlas Integration</li>
-                        </ul>
-
-                        <div class="project-buttons">
-
-                            <a href="https://github.com/Heus143/system"
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               class="project-btn dark-btn">
-                                <i class="bi bi-github"></i>
-                                GitHub
-                            </a>
-
-                            <a href="https://system-1-dinp.onrender.com/"
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               class="project-btn green-btn">
-                                <i class="bi bi-box-arrow-up-right"></i>
-                                Live Demo
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- PROJECT 3 -->
-
-            <div class="col-lg-6" data-aos="fade-up">
-
-                <div class="project-card">
-
-                    <div class="project-image">
-                        <img src="gamezone.png"
-                             alt="GameZone Gaming Products Marketplace">
-                    </div>
-
-                    <div class="project-content">
-
-                        <div class="project-tags">
-                            <span>React.js</span>
-                            <span>JavaScript</span>
-                            <span>HTML5</span>
-                            <span>CSS3</span>
-                            <span>Redux Toolkit</span>
-                        </div>
-
-                        <h3>GameZone – Gaming Products Marketplace</h3>
-
-                        <p>
-                            A responsive gaming e-commerce platform
-                            developed using React.js. It allows users
-                            to explore gaming products, manage shopping
-                            carts, maintain wishlists, and handle orders
-                            through an interactive interface.
-                        </p>
-
-                        <h5>Key Features</h5>
-
-                        <ul>
-                            <li>User Registration and Login</li>
-                            <li>Product Browsing and Search</li>
-                            <li>Category-Based Filtering</li>
-                            <li>Product Details</li>
-                            <li>Shopping Cart Management</li>
-                            <li>Wishlist Management</li>
-                            <li>Protected Checkout</li>
-                            <li>Order History and Tracking</li>
-                        </ul>
-
-                        <div class="project-buttons">
-
-                            <a href="https://github.com/Heus143/game-zone.git"
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               class="project-btn dark-btn">
-                                <i class="bi bi-github"></i>
-                                GitHub
-                            </a>
-
-                            <a href="https://gamezonestore.onrender.com/"
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               class="project-btn blue-btn">
-                                <i class="bi bi-box-arrow-up-right"></i>
-                                Live Demo
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
+    </section>
 
 
     <!-- WORKFLOW -->
@@ -1792,8 +1803,6 @@
         </div>
 
     </section>
-
-
     <!-- CONTACT -->
 
     <section id="contact" class="contact-section">
@@ -1958,6 +1967,7 @@
 
                 </div>
 
+
             </div>
 
         </div>
@@ -2033,9 +2043,13 @@
     <!-- BACK TO TOP -->
 
     <button id="topBtn">
+
         <i class="bi bi-arrow-up"></i>
+
     </button>
 
+
+    <!-- SCRIPTS -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
