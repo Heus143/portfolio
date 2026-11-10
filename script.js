@@ -1,13 +1,13 @@
+
 window.addEventListener("load", () => {
     const loader = document.getElementById("loader");
 
     if (loader) {
         setTimeout(() => {
             loader.classList.add("fade-out");
-    }, 1200);
+        }, 1200);
     }
 });
-
 
 if (typeof AOS !== "undefined") {
     AOS.init({
@@ -16,7 +16,6 @@ if (typeof AOS !== "undefined") {
         easing: "ease-in-out"
     });
 }
-
 
 const typingElement = document.querySelector(".typing");
 
@@ -28,18 +27,17 @@ if (typingElement && typeof Typed !== "undefined") {
             "Generative AI Enthusiast",
             "Machine Learning Enthusiast",
             "Frontend Developer",
-            "Backend Developer",
-            
+            "Backend Developer"
         ],
         typeSpeed: 70,
         backSpeed: 40,
         backDelay: 1200,
         startDelay: 500,
-        loop: true,
-
+        loop: true
     });
 }
 
+// SCROLL PROGRESS BAR
 
 window.addEventListener("scroll", () => {
     const scrollTop = window.scrollY;
@@ -51,25 +49,22 @@ window.addEventListener("scroll", () => {
     const progressBar = document.getElementById("progressBar");
 
     if (progressBar) {
-        const progress =
-            scrollHeight > 0
-                ? (scrollTop / scrollHeight) * 100
-                : 0;
+        const progress = scrollHeight > 0
+            ? (scrollTop / scrollHeight) * 100
+            : 0;
 
         progressBar.style.width = progress + "%";
     }
 });
 
+// BACK TO TOP
 
 const topBtn = document.getElementById("topBtn");
 
 if (topBtn) {
     window.addEventListener("scroll", () => {
-        if (window.scrollY > 300) {
-            topBtn.style.display = "flex";
-        } else {
-            topBtn.style.display = "none";
-        }
+        topBtn.style.display =
+            window.scrollY > 300 ? "flex" : "none";
     });
 
     topBtn.addEventListener("click", () => {
@@ -80,6 +75,7 @@ if (topBtn) {
     });
 }
 
+// ACTIVE NAVIGATION
 
 const sections = document.querySelectorAll("section[id]");
 const navLinks = document.querySelectorAll(".nav-link");
@@ -88,9 +84,7 @@ function updateActiveNav() {
     let current = "";
 
     sections.forEach(section => {
-        const sectionTop = section.offsetTop - 150;
-
-        if (window.scrollY >= sectionTop) {
+        if (window.scrollY >= section.offsetTop - 150) {
             current = section.getAttribute("id");
         }
     });
@@ -105,9 +99,27 @@ function updateActiveNav() {
 }
 
 window.addEventListener("scroll", updateActiveNav);
-
 updateActiveNav();
 
+// AUTOMATIC PROJECT COUNT
+
+function updateProjectCount() {
+    const totalProjects = document.querySelectorAll(
+        "#projects .project-card"
+    ).length;
+
+    const projectCounter = document.getElementById("projectCount");
+
+    if (projectCounter) {
+        projectCounter.setAttribute("data-target", totalProjects);
+    }
+
+    return totalProjects;
+}
+
+// COUNTER ANIMATION
+
+const projectTotal = updateProjectCount();
 
 const counters = document.querySelectorAll(".counter");
 const counterSection = document.querySelector(".stats-section");
@@ -116,9 +128,7 @@ if (counterSection && counters.length > 0) {
     let counterStarted = false;
 
     function startCounter() {
-        if (counterStarted) {
-            return;
-        }
+        if (counterStarted) return;
 
         counterStarted = true;
 
@@ -136,12 +146,7 @@ if (counterSection && counters.length > 0) {
                 );
 
                 if (count < target) {
-                    count += increment;
-
-                    if (count > target) {
-                        count = target;
-                    }
-
+                    count = Math.min(count + increment, target);
                     counter.textContent = count;
 
                     setTimeout(updateCounter, 20);
@@ -154,31 +159,27 @@ if (counterSection && counters.length > 0) {
         });
     }
 
-    const observer = new IntersectionObserver(
-        entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    startCounter();
-                    observer.disconnect();
-                }
-            });
-        },
-        {
-            threshold: 0.3
-        }
-    );
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                startCounter();
+                observer.disconnect();
+            }
+        });
+    }, {
+        threshold: 0.3
+    });
 
     observer.observe(counterSection);
 }
 
+// SMOOTH SCROLL
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener("click", function(e) {
         const href = this.getAttribute("href");
 
-        if (!href || href === "#") {
-            return;
-        }
+        if (!href || href === "#") return;
 
         const target = document.querySelector(href);
 
@@ -193,6 +194,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// CONTACT FORM
 
 const form = document.getElementById("contactForm");
 
@@ -206,12 +208,12 @@ if (form) {
     });
 }
 
+// CURRENT YEAR
 
 const year = document.getElementById("year");
 
 if (year) {
     year.textContent = new Date().getFullYear();
 }
-
 
 console.log("Portfolio Loaded Successfully 🚀");
